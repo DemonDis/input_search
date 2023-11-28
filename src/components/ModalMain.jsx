@@ -2,10 +2,10 @@
 import React, {useState} from 'react';
 import {Button,Modal} from 'react-bootstrap';
 import InputGoast from './InputGost';
-import ListCheck from './ListCheck';
+import { Data } from '@/utils/static';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import './modal.css'
+import './modal.css';
 
 const ModalPanel = (props) => {
   return (
@@ -21,12 +21,11 @@ const ModalPanel = (props) => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <InputGoast/>
-        <ListCheck/>
+        <InputGoast data={Data} />
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Закрыть</Button>
         <Button onClick={props.onHide}>Добавить</Button>
+        <Button onClick={props.onHide}>Закрыть</Button>
       </Modal.Footer>
     </Modal>
   );
